@@ -78,15 +78,15 @@ A do while loop checks for the condition(i.e., the desired file is created or no
 
 ### File Input and Output
 
-The output of file is written to a file which has a name of user's choice
+The output of file is written to a file which has a name of user's choice.
 
 ### Arrays/Vectors
 
-A string array of colours keep record of all the colour values entered 
+A string array of colours keep record of all the colour values entered.
 
 ### Functions
 
-*Coming in version 0.2*
+A combination of if and else statements has been used to go through if the file is found or not and if it is found what should it display.
 
 ### Classes
 
