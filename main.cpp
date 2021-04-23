@@ -1,39 +1,51 @@
-//Author: Dhiab almansoori
-#include <fstream>
+//including the required libraries
 #include <iostream>
+#include <stdio.h>
+#include <string>
+#include <fstream>
+
+// including std in the current namespace
 using namespace std;
 
+
+
 int main() {
-  string line = "";
-  size_t position;
-  string filename;
-  ifstream reader;
-  string color;
+	// defining local variables
+	string user,name;
+	fstream file;
+	bool repeat=0;
 
-   cout << "Please type the name of the file to open:\n";
-   getline(cin, filename);
-   reader.open(filename, ios::in);
+	while (!repeat) {
 
-   if (reader.is_open())  {
+		repeat = 1;
+		cout << "Enter Name of the file you want to open \n";
+		cin >> user;
+		name = user + ".txt";
+		file.open(name);
+		if (file) {
+			cout << endl << "**** File Found ****\n";
+		}
+		else {
+			cout << endl << "**** File not Found ****\n";
+			cout << endl << "Would You like to try again(Y/N)?\n";
+			char selection_variable;
+			cin >> selection_variable;
+			if (selection_variable == 'Y')
+			{
+				repeat = 0;
+			}
 
-      while (!reader.eof()) {
-        getline(reader, line);
-        position = line.find("#");
+		}
+	}
+	if (file.is_open()) {   
+		cout << endl << "*** Colours found in the file are ***\n";
+		string tp;
+		while (getline(file, tp)) { 
+			cout << "\t";
+			cout << tp << "\n";  
+		}
+		cout << "\n\n*** Exiting File ***\n";
+		file.close(); 
+	}
 
-        if (line[position]) {
-          cout << '#';
-          for (char colorvalue = position += 1; (line[colorvalue] >= '0' && line[colorvalue]
-          <='9') || (line[colorvalue] >= 'A' && line[colorvalue]  <= 'F'); colorvalue++) {
-
-            cout << line[colorvalue];
-          }
-        }
-        cout << endl;
-      }
-   }
-
-
-
-
-
-  return 0;}
+}

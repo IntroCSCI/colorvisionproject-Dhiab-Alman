@@ -1,16 +1,8 @@
-# !!!Replace with your unique project name!!!
-css Palette Analyzer
+# C++ Palette Analyzer
+
 ## Description
 
-so what this program does so far is that it asks you for the file that you want to analyze/open. Then it reads through the file and finds the colour codes in that file and displays them. Later on I will program it to actually analyze those colour codes and tells you if this colour could be problamatic.
-
-### v0.2 Updates
-
-*Coming soon*
-
-### v1.0 Updates
-
-*Coming soon*
+This is a simple console application, it asks the user to write the name of the  file that in which the information of the colours will the be analyzed, first it promopts the user to provide any file name for the name in which he wants to analyze colour information. Then a loop will start and it takes information for all those colours one by one and they finally it will write that data to a .css file
 
 
 ## Developer
@@ -20,7 +12,7 @@ Dhiab almansoori
 ## Example
 
 To run the program, give the following commands:
-The file name that should be analyzed
+
 ```
 g++ --std=c++11 *.cpp -o cvp
 ./cvp
@@ -28,55 +20,69 @@ g++ --std=c++11 *.cpp -o cvp
 
 Here is an example of the program running:
 
-Please type the name of the file to open:
-css_example
+Enter Name of the file you want to open 
+Color_1
 
-#D9D9D9
-#00AAFF
-#00AAFF
-#00AAFF
-#00AAFF
-#00AAFF
-#00AAFF
-#00AAFF
-#00AAFF
-```
-```
+**** File Found ****
+
+*** Colours found in the file are ***
+    #6D6968
+    #726E6D
+    #736F6E
+    #837E7C
+    #848482
+    #B6B6B4
+    #D1D0CE
+    #E5E4E2
+    #BCC6CC
+    #98AFC7
+    #6D7B8D
+    #657383
+    #616D7E
+    #646D7E
+    #566D7E
+    #737CA1
+    #4863A0
+    #2B547E
+    #2B3856
+    #151B54
+    #000080
+    #342D7E
+    #15317E
+    #151B8D
+    #0000A0
+    #0020C2
+
+
+*** Exiting File ***
 
 ## C++ Guide
 
 ### Variables and Data Types
 
-Variables and data types in this program is designed to capture the information under a clear name that we can use throughout the program and as an example we have
-  string color;
-    string filename;
-    and   ifstream reader; to use as a reader
+Followind data types were used while making the program :
+- Strings
+- int
+- char
+- bool
 
-### Console Input and Output
-
-The input and output of this program is simplistic and straight forword.
-In line 13 after the output asks for the filename, the input after is captured as filename. Moreover, the output displays the colour value in the end so that you can analyze it
 
 
 ### Decisions
 
-Decisions in this program is used to type "#" after identifying a colour code using while loops.
- if (line[position]) {
-          cout << '#';
+a do while loop is used to create the file if condition inside the while loop returns zero the loop stops and an if statement check for the user input if he/she presses 'Y'. it will keep looping to create a file, a if conditionalso checks wheather the file is created or not
 
 ### Iteration
 
-Like I said previously while loops is used in this program to identify colour codes by finding codes that starts with a "#", and "#" is usually used to identify a colourcode
-
+A do while loop checks for the condition(i.e., the desired file is created or not) if not true keeps iterating the loop
 
 ### File Input and Output
 
-Files input is used in this program to open the filename that is listed by the user which I used as an example with the file (css_example)
-
+The output of file is written to a file which has a name of user's choice
 
 ### Arrays/Vectors
 
-*Coming in version 0.2*
+A string array of colours keep record of all the colour values entered 
 
 ### Functions
 
@@ -84,4 +90,4 @@ Files input is used in this program to open the filename that is listed by the u
 
 ### Classes
 
-*Coming in version 1.0*
+*Coming in
