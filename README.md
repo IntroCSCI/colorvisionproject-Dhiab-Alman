@@ -2,92 +2,103 @@
 
 ## Description
 
-This is a simple console application, it asks the user to write the name of the  file that in which the information of the colours will the be analyzed, first it promopts the user to provide any file name for the name in which he wants to analyze colour information. Then a loop will start and it takes information for all those colours one by one and they finally it will write that data to a .css file
+This program analyzes the colors used in the css file. It checks for the commonly used colors in the 
+file and consider them as the color palette of the file. It then checks the color combination is good
+for several color blindlness condition
+
+### v0.2 Updates
+
+Added Arrays/Vectors,Functions and rearrenged the project. Along with some bug fixes.
+
+### v1.0 Updates
+
+Reprogrammed the whole project and added classes and managed the codes along side a explaination on everything.
 
 
 ## Developer
 
-Dhiab almansoori
+Dhiab Almansoori
 
 ## Example
 
 To run the program, give the following commands:
 
-```
+
 g++ --std=c++11 *.cpp -o cvp
 ./cvp
-```
+
 
 Here is an example of the program running:
 
-Enter Name of the file you want to open 
-Color_1
 
-**** File Found ****
+Please enter file name: readme_example
 
-*** Colours found in the file are ***
-    #6D6968
-    #726E6D
-    #736F6E
-    #837E7C
-    #848482
-    #B6B6B4
-    #D1D0CE
-    #E5E4E2
-    #BCC6CC
-    #98AFC7
-    #6D7B8D
-    #657383
-    #616D7E
-    #646D7E
-    #566D7E
-    #737CA1
-    #4863A0
-    #2B547E
-    #2B3856
-    #151B54
-    #000080
-    #342D7E
-    #15317E
-    #151B8D
-    #0000A0
-    #0020C2
+The colors in the palette are
+  HEX   COUNT
+E7E7E7 1
 
+Analysis:
+There are 1 unique colors.
 
-*** Exiting File ***
+Commonly Used Colors:
+  HEX   COUNT
+E7E7E7   1
+000000   0
+000000   0
+000000   0
+000000   0
+000000   0
+000000   0
+000000   0
+
+Color Blindness Test
+   CONDITION    RESULT
+Protanopia    : Failed       
+Protanomaly   : Failed       
+Deuteranopia  : Failed       
+Deuteranomaly : Failed       
+Tritanopia    : Failed       
+Tritanomaly   : Failed       
+Achromatopsia : Failed       
+Achromatomaly : Failed
+
 
 ## C++ Guide
 
 ### Variables and Data Types
 
-Followind data types were used while making the program :
-- Strings
-- int
-- char
-- bool
+Variables and custom classes were used to contain the important information of the color
+such as its components: red, green, and blue.
 
+### Console Input and Output
 
+We used cout and cin extensively throughout the program to get user input and display the 
+output of the program. We also used printf for cases where there is a special requirement
+for the formatting.
 
 ### Decisions
 
-a do while loop is used to create the file if condition inside the while loop returns zero the loop stops and an if statement check for the user input if he/she presses 'Y'. it will keep looping to create a file, a if conditionalso checks wheather the file is created or not
+If and else constructs are used to provide proper manipulation of the user input and
+the color values.
 
 ### Iteration
 
-A do while loop checks for the condition(i.e., the desired file is created or not) if not true keeps iterating the loop
+While and for loops are used to read each word in the css file to extract the colors and 
+analyze each. These loops were also used to prevent duplication of colors in the vector.
 
 ### File Input and Output
 
-The output of file is written to a file which has a name of user's choice.
+With the help of fstream library, we were able to read the css file and perform operation on it.
+The fstream library offers a cout/cin style of accessing data in the file.
 
 ### Arrays/Vectors
 
-A string array of colours keep record of all the colour values entered.
+I used vectors to store the colors inside the chosen file from the user. The Arrays is used to list the common color names used in css and their corresponding color values in hex.
 
 ### Functions
 
-A combination of if and else statements has been used to go through if the file is found or not and if it is found what should it display.
+Functions is used to check if a color is existing in the color table and include that color if it is not in the color table
 
 ### Classes
 
-*Coming in
+Classes was used to store the important information of the colour such as its components: RGB and to define if colours are equal or not.
